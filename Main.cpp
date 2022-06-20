@@ -121,6 +121,63 @@ void setIdentityM(Matrix4 m)
     for(int j=0;j<4;j++)   m[i][j]=(i==j);
 
 }
+void ProjectionMatrix(float Iz)
+{
+	Matrix4 a;
+    for(int i=0;i<4;i++)
+    	for(int j=0;j<4;j++)   a[i][j]=(i==j);
+    a[2][2] = 0;
+    a[2][3] = -1/Iz;
+    cout<<"==========================\n";
+
+    for(int i=0;i<4;i++)
+    {
+
+        for(int j=0;j<4;j++)
+
+        {
+
+            cout<<a[i][j] << "\t";
+
+        }
+
+        cout<<"\n";
+
+    }
+
+    cout<<"==========================\n";
+}	
+ 
+
+void perspective(float Iz){
+
+    float r = -1/Iz;
+
+    for(int i=0;i<8;i++){
+
+          for(int j=0;j<3;j++){
+
+                if(j==2)    output[i][j] = 0;
+                else        output[i][j] = input[i][j]/(r+1);
+          }
+    }
+
+}
+
+ 
+
+void scale(int sx,int sy,int sz)
+
+{
+
+    theMatrix[0][0]=sx;
+
+    theMatrix[1][1]=sy;
+
+    theMatrix[2][2]=sz;
+
+}
+
  
 
 void RotateX(float angle) //Parallel to x
