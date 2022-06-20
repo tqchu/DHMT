@@ -122,6 +122,61 @@ void setIdentityM(Matrix4 m)
 
 }
  
+
+void RotateX(float angle) //Parallel to x
+
+{
+
+ angle = angle*3.142/180;
+
+ theMatrix[1][1] = cos(angle);
+
+ theMatrix[1][2] = -sin(angle);
+
+ theMatrix[2][1] = sin(angle);
+
+ theMatrix[2][2] = cos(angle);
+
+}
+
+ 
+
+void RotateY(float angle) //parallel to y
+
+{
+
+ angle = angle*3.14/180;
+
+ theMatrix[0][0] = cos(angle);
+
+ theMatrix[0][2] = -sin(angle);
+
+ theMatrix[2][0] = sin(angle);
+
+ theMatrix[2][2] = cos(angle);
+
+}
+
+ 
+
+void RotateZ(float angle) //parallel to z
+
+{
+
+ angle = angle*3.14/180;
+
+ theMatrix[0][0] = cos(angle);
+
+ theMatrix[0][1] = sin(angle);
+
+ theMatrix[1][0] = -sin(angle);
+
+ theMatrix[1][1] = cos(angle);
+
+}
+
+ 
+
 void multiplyM()
 
 {
